@@ -9,18 +9,19 @@ public class Triangle {
         this.c = c;
     }
 
-    public double squareOfTriangle (){
-        if( !(a<=0 | b<=0 | c<=0) ){
-            if( a+b>c & b+c>a & c+a>b ){
-                double p = ((double)a + b + c) / 2;
-                double square = Math.sqrt(p*(p-a)*(p-b)*(p-c));
-                return square;
-            }
-                System.out.println("wrong triangle sides size (triangle not closed)");
-                return 0;
+    public boolean isTriangleExist() {
+        if (a + b > c & b + c > a & c + a > b) {
+            return true;
         }
-        System.out.println("wrong triangle size (zero or less side size)");
-        return 0;
+            System.out.println("triangle doesn't exist");
+            return false;
     }
+
+    public double squareOfTriangle (){
+        double p = ((double)a + b + c) / 2;
+        double square = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+        return square;
+    }
+
 
 }
